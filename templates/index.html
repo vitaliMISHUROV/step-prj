@@ -1,0 +1,40 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Моя первая страница</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        min-height: 50vh;
+        margin: 0;
+      }
+      
+      ul {
+        text-align: left;
+        padding-left: 50px;
+      }
+      
+      li {
+        margin-bottom: 5px;
+      }
+      
+      h1, h2 {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Story</h1>
+    <h1>{% translate "Hello " %}</h1>
+    <h2>{{ LANGUAGE_CODE }} </h2>
+    <ul>
+      {% for country in countries %}
+        <li><a href="country/{{ country.id }}">{{ country }}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
